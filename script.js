@@ -1,85 +1,159 @@
-let aracBilgileri = [
-  {
-    id: 'bmw116d_1234',
-    model : '116d',
-    yil : 2015,
-    renk : 'white',
-    servisKayitlari : [
-      {
-        id : 'bmw116d_1234_1', tarih : '30.01.2016', km:13000, toplamÜcret:900,
-        servisDetayi : 
-        [
-          {id : 'bmw116d_1234_1_1', islem : 'yag degisimi', ücret : 300},
-          {id : 'bmw116d_1234_1_2', islem : 'filtre degisimi', ücret : 300},
-          {id : 'bmw116d_1234_1_3', islem : 'fren hidroligi', ücret : 300}      
-        ]
-      },
-      {
-        id : 'bmw116d_1234_2', tarih : '10.01.2017', km:28000, toplamÜcret:1800,
-        servisDetayi : 
-        [
-          {id : 'bmw116d_1234_2_1', islem : 'yag degisimi', ücret : 350},
-          {id : 'bmw116d_1234_2_2', islem : 'filtre degisimi', ücret : 350},
-          {id : 'bmw116d_1234_2_3', islem : 'fren hidroligi', ücret : 300},
-          {id : 'bmw116d_1234_2_4', islem : 'balata degisimi', ücret : 800}      
-        ]
-      }
-    ]
-  },
-  {
-    id: 'bmw118i_1234',
-    model : '118i',
-    yil : 2015,
-    renk : 'white',
-    servisKayitlari : [
-      {
-        id : 'bmw1118i_1234_1', tarih : '30.01.2016', km:13000, toplamÜcret:900,
-        servisDetayi : 
-        [
-          {id : 'bmw118i_1234_1_1', islem : 'yag degisimi', ücret : 300},
-          {id : 'bmw118i_1234_1_2', islem : 'filtre degisimi', ücret : 300},
-          {id : 'bmw118i_1234_1_3', islem : 'fren hidroligi', ücret : 300}      
-        ]
-      },
-      {
-        id : 'bmw118i_1234_2', tarih : '10.01.2017', km:28000, toplamÜcret:1800,
-        servisDetayi : 
-        [
-          {id : 'bmw118i_1234_2_1', islem : 'yag degisimi', ücret : 350},
-          {id : 'bmw118i_1234_2_2', islem : 'filtre degisimi', ücret : 350},
-          {id : 'bmw118i_1234_2_3', islem : 'fren hidroligi', ücret : 300},
-          {id : 'bmw118i_1234_2_4', islem : 'balata degisimi', ücret : 800}      
-        ]
-      }
-    ]
-  },
-  {
-    id: 'bmw320d_1234',
-    model : '320d',
-    yil : 2015,
-    renk : 'white',
-    servisKayitlari : [
-      {
-        id : 'bmw320d_1234_1', tarih : '30.01.2016', km:13000, toplamÜcret:900,
-        servisDetayi : 
-        [
-          {id : 'bmw320d_1234_1_1', islem : 'yag degisimi', ücret : 300},
-          {id : 'bmw320d_1234_1_2', islem : 'filtre degisimi', ücret : 300},
-          {id : 'bmw320d_1234_1_3', islem : 'fren hidroligi', ücret : 300}      
-        ]
-      },
-      {
-        id : 'bmw320d_1234_2', tarih : '10.01.2017', km:28000, toplamÜcret:1800,
-        servisDetayi : 
-        [
-          {id : 'bmw320d_1234_2_1', islem : 'yag degisimi', ücret : 350},
-          {id : 'bmw320d_1234_2_2', islem : 'filtre degisimi', ücret : 350},
-          {id : 'bmw320d_1234_2_3', islem : 'fren hidroligi', ücret : 300},
-          {id : 'bmw320d_1234_2_4', islem : 'balata degisimi', ücret : 800}      
-        ]
-      }
-    ]
-  }
-]
+/*  loops
 
-console.log(aracBilgileri[0].servisKayitlari[0].servisDetayi);
+for loop
+
+for(let i=1; i<10; i++){
+  if (i===3){
+    console.log('en sevdigim rakam:'+i);
+    continue;
+  }
+
+  if (i===6){
+    console.log('en sevmedigim rakam:'+i);
+    break;
+  }
+
+  console.log(i);
+}
+
+
+for(let i=0; i<10; i++){
+  for(let j=0; j<10;j++){
+    console.log(`i:${i} j:${j}`);
+  }
+}
+
+
+
+...............................................................................
+
+while loop
+
+let i = 10;
+while (i>0) {
+
+   if(i===6){
+    console.log('en sevmedigim rakam:'+i)
+    break;
+  }
+  console.log(i);
+  i--;
+}
+
+
+
+let i = 1;
+while (i<10) {
+  if (i===3){
+    console.log('en sevdigim rakam:'+i);
+    i++;
+    continue;        
+  }  
+  console.log(i);
+  i++;
+}
+
+.....................................................................................
+
+
+do while
+let i = 0;
+
+do{
+  console.log(i);
+  i++;
+}while (i<10);
+
+
+....................................................................................
+
+for each
+const langs = ['Python', 'Javascript', 'Java']
+
+langs.forEach(function(e,index){
+  console.log(e,index);
+});
+
+
+let cars = ['bmw', 'toyota', 'opel'];
+cars.forEach(function(item){
+  console.log(item);
+});
+
+
+let people = [
+  {firstName : 'sakir', lastName: 'tufan', age:36},
+  {firstName : 'fatma', lastName: 'tufan', age:33},
+  {firstName : 'ümit', lastName: 'tufan', age:9},
+  {firstName : 'hatice', lastName: 'tufan', age:7}
+];
+people.forEach(function(item){
+  console.log(item.firstName);
+});
+.......................................................................................
+
+map fonksiyonu => geriye bir dizi döndürüp daha sonradan kullanilir
+
+const users = [
+  {name: 'mustafa', age:25},
+  {name: 'zeynep', age:40},
+  {name: 'ali',age:12}
+];
+const names = users.map(function(user){
+  return user.name;
+});
+const ages = users.map(function(user){
+  return user.age;
+});
+console.log(names);
+console.log(ages);
+
+
+let people = [
+  {firstName : 'sakir', lastName: 'tufan', age:36},
+  {firstName : 'fatma', lastName: 'tufan', age:33},
+  {firstName : 'ümit', lastName: 'tufan', age:9},
+  {firstName : 'hatice', lastName: 'tufan', age:7}
+];
+let val = people.map(function(item){
+  return item.firstName + ' ' + item.lastName + ' ' + item.age;
+});
+console.log(val);
+
+
+let numbers =[2,3,4,5,6];
+let num = numbers.map(function(item){
+  return item*item
+});
+console.log(num);
+.........................................................................................
+
+for-in döngüsü
+
+const user = {
+  name:'mustafa',
+  age:25
+};
+for (let key in user){
+  console.log(key,user[key]);
+}
+
+
+let cars = ['bmw', 'toyota', 'opel'];
+for (let i in cars){
+  console.log(`index: ${i} value: ${cars[i]}`);
+}
+
+
+let cars = ['bmw', 'toyota', 'opel'];
+let people = [
+  {firstName : 'sakir', lastName: 'tufan', age:36},
+  {firstName : 'fatma', lastName: 'tufan', age:33},
+  {firstName : 'ümit', lastName: 'tufan', age:9},
+  {firstName : 'hatice', lastName: 'tufan', age:7}
+];
+for(let i in people){
+  console.log(people[i].firstName);
+}
+...............................................................................................
+*/
